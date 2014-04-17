@@ -1,111 +1,37 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title> TeamWork </title>
-		   
-		   <style>
-				@-webkit-keyframes title{
-						0%{
-							opacity: 0;
-							text-shadow: 0px 0px 40px #fff;
-							-webkit-transform: scale(3);
-						}
-						50%{
-							opacity: 0.5;
-							text-shadow: 0px 0px 10px #fff;
-							-webkit-transform: scale(2);
-						}
-						100%{
-							opacity: 1;
-							text-shadow: 0px 0px 1px #fff;
-							-webkit-transform: scale(1);
-						}
-					}
-					@-webkit-keyframes image{
-						0%{
-							opacity: 0;
-							-webkit-transform: scale(100);
-						}
-						
-						100%{
-							opacity: 1;
-							-webkit-transform: scale(1.5);
-						}
-					}
-					@-webkit-keyframes background{
-						0%{
-							-webkit-opacity:1;
-						}
-						100%{
-							-webkit-opacity:0;
-						}
-					}
-					@-webkit-keyframes content{
-						0%{
-							-webkit-opacity:0;
-						}
-						100%{
-							-webkit-opacity:1;
-						}
-					}
-					.content{
-						position:relative;
-						z-index:1000;
-						-webkit-animation:content 3s linear 5s backwards;
-					}
-					.title{
-						z-index:0;
-						position:fixed;
-						width:100%;height:100%;
-						top:0px;left:0px;
-						background:#ccc;
-						text-align:center;
-						-webkit-animation:background 3s linear 5s forwards;
-
-					}
-					.image{
-						position:absolute;
-						width:75px;height:75px;
-						top:50%;left:50%;
-						margin:-37px;
-						background-image:url("logo.png");
-						-webkit-animation:image 3s linear forwards;
-						animation:image 3s linear forwards;
-					}
-					.title h2{
-						font-weight:blod;
-						font-size:60px;
-						top:60%;
-						width:100%;height:68px;
-						color:transparent;
-						position:absolute;
-						text-align:center;
-						text-shadow: 0px 0px 1px #fff;
-						-webkit-animation:title 3s linear 2s backwards;
-						animation:title 3s linear 2s backwards;
-					}
-				*,html,body{
-					margin:0;padding:0;list-style:none;width:100%;height:100%;
-				}
-				header{
-					width:auto;height:15%;background:#ADD8E6;font-size:20px;text-align:center;line-height:90px;
-				}
-				#headerleft{
-					width:10%;height:100%;float:left;
-				}
-				#headerright{
-					width:90%;height:100%;float:left;
-				}
-				#main{
-					width:auto;height:85%;
-				}
-				#mainleft{
-					float:left;width:10%;line-height:50px;text-align:center;background:pink
-				}
-				#mainright{
-					float:left;width:90%;line-height:50px;text-align:center;display:block;
-				}
-				#mainleft a{
+		<meta charset="utf-8">
+		<style>
+			body{
+				background: url("bg.jpg");
+				margin: 0;
+				padding: 0;
+			}
+			.top{
+				top: 0;
+				left: 0;
+				position: fixed;
+				width: 100%;
+				height: 75px;
+				background-color: #212121;
+				z-index: 99;
+			}
+			.top-container{
+				width: 1063px;
+				margin: 0 auto;
+			}
+			.top_icon{
+				float: left;
+				width: 75px;
+				height: 75px;
+				background: url("logo.png")
+			}
+			.top_navs{
+				float: left;
+				margin-top: 2.5px;
+			}
+			.top_navs a{
 					width:128px;height:40px;
 					margin:15px;
 					line-height:40px;text-align:center;
@@ -113,96 +39,217 @@
 					text-decoration:none;
 					color:#fff;
 					-webkit-perspective: 800px;
-				}
-				#mainleft a span{
-					position: relative;
-					display: inline-block;
-					width: 100%;
-					background: #e35041;
-					-webkit-transform-style:preserve-3d;
-					-webkit-transform-origin:50% 50% -64px;
-					-webkit-transition:-webkit-transform 0.4s,background 0.4s;
-				}
-				#mainleft a span::before{
-					position:absolute;
-					top:0;left:100%;
-					width:100%;height:100%;
-					background: #b53a2d;
-					content:attr(data-hover);
-					-webkit-transform-origin:0 50%;
-					-webkit-transform:rotateY(90deg);
-				}
-				#mainleft a:hover span{
-					background: #b53a2d;
-					-webkit-transform:rotateY(-90deg);
-				}
-				#mainleft a:hover span::before{
-					background: #ef5e50;
-				}
-				#mainright1{
-					float:left;width:100%;height:100%;line-height:50px;text-align:center;overflow-y:scroll;
-				}
-		   </style>
- </head>
+			}
+			.top_navs a span{
+				position: relative;
+				display: inline-block;
+				width: 100%;
+				background: #e35041;
+				-webkit-transform-style:preserve-3d;
+				-webkit-transform-origin:50% 50% -64px;
+				-webkit-transition:-webkit-transform 0.4s,background 0.4s;
+			}
+			.top_navs a span::before{
+				position:absolute;
+				top:0;left:100%;
+				width:100%;height:100%;
+				background: #b53a2d;
+				content:attr(data-hover);
+				-webkit-transform-origin:0 50%;
+				-webkit-transform:rotateY(90deg);
+			}
+			.top_navs a:hover span{
+				background: #b53a2d;
+				-webkit-transform:rotateY(-90deg);
+			}
+			.top_navs a:hover span::before{
+				background: #ef5e50;
+			}
+			.container{
+				top: 75px;
+				left: 0;
+				width: 960px;
+				position: relative;
+				margin: 0 auto;
+				padding: 10px;
+			}
+			.main{
+				width: 710px;
+				border-radius: 7px;
+				background-color: #fff;
+				float: left;
+			}
+			.clear{
+				clear: both;
+				display: block;
+				overflow: hidden;
+				visibility: hidden;
+				width: 0;
+				height: 0;
+			}
 
- <body>
-	
-	<div class=content>
-		<header>
-			<div id="headerleft">
-				<img src="logo.png">
-			</div>
-			<div id="headerright">
-				世界随你而动
-			</div>
-		</header>
-		<div id="main">
-			<div id="mainleft">
-				<a href="#"><span data-hover="HOME">HOME</span></a>
-				<a href="#"><span data-hover="Python">Python</span></a>
-				<a href="#"><span data-hover="JavaScript">JavaScript</span></a>
-				<a href="#"><span data-hover="C">C</span></a>
-				<a href="#"><span data-hover="C++">C++</span></a>
-			</div>
-			<div id="mainright">
-				<div id="mainright1">
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					a<br/>
-					b<br/>
-					b<br/>
-					b<br/>
-					b<br/>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class=title>
+			.container-navs {
+			    /* Size and position */
+			    position: fixed;
+			    top: 85px;
+			    right: 0px;
+			    width: 200px;
+			    padding: 10px;
+
+			    /* Styles */
+			    background: #fff;
+			    border-radius: 7px;
+			    border: 1px solid rgba(0,0,0,0.15);
+			    box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+			    cursor: pointer;
+			    outline: none;
+
+			    /* Font settings */
+			    font-weight: bold;
+			    color: #8AA8BD;
+			}
+
+			.container-navs:after {
+			    content: "";
+			    width: 0;
+			    height: 0;
+			    position: absolute;
+			    right: 15px;
+			    top: 50%;
+			    margin-top: -3px;
+			    border-width: 6px 6px 0 6px;
+			    border-style: solid;
+			    border-color: #8aa8bd transparent;
+			}
+
+			.container-navs .dropdown {
+			  /* Size & position */
+			    position: absolute;
+			    top: 140%;
+			    left: 0;
+			    right: 0;
+
+			    /* Styles */
+			    background: white;
+			    border-radius: inherit;
+			    border: 1px solid rgba(0,0,0,0.17);
+			    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+			    font-weight: normal;
+			    -webkit-transition: all 0.5s ease-in;
+			    -moz-transition: all 0.5s ease-in;
+			    -ms-transition: all 0.5s ease-in;
+			    -o-transition: all 0.5s ease-in;
+			    transition: all 0.5s ease-in;
+			    list-style: none;
+
+			    /* Hiding */
+			    opacity: 0;
+			    pointer-events: none;
+			}
+
+			.container-navs .dropdown:after {
+			    content: "";
+			    width: 0;
+			    height: 0;
+			    position: absolute;
+			    bottom: 100%;
+			    right: 15px;
+			    border-width: 0 6px 6px 6px;
+			    border-style: solid;
+			    border-color: #fff transparent;    
+			}
+
+			.container-navs .dropdown:before {
+			    content: "";
+			    width: 0;
+			    height: 0;
+			    position: absolute;
+			    bottom: 100%;
+			    right: 13px;
+			    border-width: 0 8px 8px 8px;
+			    border-style: solid;
+			    border-color: rgba(0,0,0,0.1) transparent;    
+			}
+
+			.container-navs .dropdown li a {
+			    display: block;
+			    padding: 10px;
+			    text-decoration: none;
+			    color: #8aa8bd;
+			    border-bottom: 1px solid #e6e8ea;
+			    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+			    -webkit-transition: all 0.3s ease-out;
+			    -moz-transition: all 0.3s ease-out;
+			    -ms-transition: all 0.3s ease-out;
+			    -o-transition: all 0.3s ease-out;
+			    transition: all 0.3s ease-out;
+			}
+
+			.container-navs .dropdown li i {
+			    float: right;
+			    color: inherit;
+			}
+
+			.container-navs .dropdown li:first-of-type a {
+			    border-radius: 7px 7px 0 0;
+			}
+
+			.container-navs .dropdown li:last-of-type a {
+			    border: none;
+			    border-radius: 0 0 7px 7px;
+			}
+
+			/* Hover state */
+
+			.container-navs .dropdown li:hover a {
+			    background: #f3f8f8;
+			}
+
+			/* Active state */
+
+			.container-navs.active .dropdown {
+			    opacity: 1;
+			    pointer-events: auto;
+			}
+
+		</style>
+		<link rel="stylesheet" type="text/css" href="animation.css"/>
+		<script type="text/javascript" src="modernizr.custom.79639.js"></script>
+	</head>
+	<body>
+		<div class=title>
 			<div class=image></div>
 			<h2>世界随你而动</h2>
-	</div>
- </body>
+		</div>
+		<div class=content>
+			<div class=top>
+				<div class=top-container>
+					<div class=top_icon></div>
+					<div class=top_navs>
+						<a href="#"><span data-hover="HOME">HOME</span></a>
+						<a href="#"><span data-hover="INTRO">INTRO</span></a>
+						<a href="#"><span data-hover="PYTHON">PYTHON</span></a>
+						<a href="#"><span data-hover="JAVASCRIPT">JAVASCRIPT</span></a>
+						<a href="#"><span data-hover="AIRWATCH">AIRWATCH</span></a>
+						<a href="#"><span data-hover="EMM">EMM</span></a>
+					</div>
+				</div>
+			</div>
+
+			<div class=container>
+				<div class=main>
+					b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>b</br>
+				</div>
+				<div class=container-navs>
+					<span>Transport</span>
+					<ul class="dropdown">
+						<li><a href="#">Classic mail</a></li>
+						<li><a href="#">UPS Delivery</a></li>
+						<li><a href="#">Private jet</a></li>
+					</ul>
+				</div>
+				<div class=clear></div>
+			</div>
+		</div>
+	</body>
 </html>
