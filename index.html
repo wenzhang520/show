@@ -15,25 +15,54 @@
 				left: 0;
 				position: fixed;
 				width: 100%;
-				height: 75px;
+				height: 42px;
 				background-color: #212121;
+				box-shadow: 0 2px 3px rgba(0,0,0,0.35);
 				z-index: 99;
 			}
 			.top-container{
-				width: 1063px;
+				width: 670px;
 				margin: 0 auto;
 			}
-			.top_icon{
+			.top-icon{
 				float: left;
-				width: 75px;
-				height: 75px;
-				background: url("logo.png")
+				width: 32px;
+				height: 32px;
+				margin: 5px 22px 0 0;
+				background: url("favicon.ico")
 			}
-			.top_navs{
+			.top-navs{
 				float: left;
-				margin-top: 2.5px;
 			}
-			.top_navs a{
+			.top-navs a{
+				position: relative;
+				display: inline-block;
+				margin: 10px 15px;
+				outline: none;
+				color: #6f8686;
+				text-decoration: none;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-weight: 400;
+				text-shadow: 0 0 1px rgba(111,134,134,0.3);
+				font-size: 1.2em;
+			}
+			.top-navs a::before{
+				position: absolute;
+				display: inline-block;
+				color:#fff;
+				content:attr(data-hover);
+				opacity:0;
+				-webkit-transform-origin:top;
+				-webkit-transform:scale(1.1) rotate(4deg) translateX(10px) translateY(-10px);
+				-webkit-transform-origin:100% 0%;
+				-webkit-transition:all 0.3s;
+			}
+			.top-navs a:hover::before{
+				opacity:1;
+				-webkit-transform:scale(1) rotateY(0deg) translateX(0px) translateY(0px);
+			}			
+/*			.top_navs a{
 					width:128px;height:40px;
 					margin:15px;
 					line-height:40px;text-align:center;
@@ -67,10 +96,11 @@
 			.top_navs a:hover span::before{
 				background: #939393;
 			}
+*/
 			.container{
-				top: 75px;
+				top: 42px;
 				left: 0;
-				width: 960px;
+				width: 710px;
 				position: relative;
 				margin: 0 auto;
 				padding: 10px;
@@ -78,11 +108,15 @@
 			.main{
 				width: 710px;
 				border-radius: 7px;
-				border: 1px solid rgba(0,0,0,0.15);
+				border: 1px solid #d9d9bd;
 				box-shadow: 0 1px 1px rgba(50,50,50,0.1);
-				background-color: #fff;
+				background-color: #f0f0e3;
 				float: left;
 				position: relative;
+				-webkit-transition: background 0.3s;
+			}
+			.main:hover{
+				background-color: #fafaf3;
 			}
 			.clear{
 				clear: both;
@@ -96,14 +130,14 @@
 			.container-navs {
 			    /* Size and position */
 			    position: fixed;
-			    top: 85px;
+			    
 			    right: -130px;
 			    width: 200px;
 			    margin-top: 0px;
 			    padding: 10px;
 
 			    /* Styles */
-			    background: #fff;
+			    background: #fafaf3;
 			    border-radius: 7px;
 			    border: 1px solid rgba(0,0,0,0.15);
 			    box-shadow: 0 1px 1px rgba(50,50,50,0.1);
@@ -113,6 +147,12 @@
 			    /* Font settings */
 			    font-weight: bold;
 			    color: #8AA8BD;
+			}
+			#kk{
+				top: 52px;
+			}
+			#kk1{
+				top: 102px;
 			}
 
 			.container-navs:after {
@@ -228,12 +268,12 @@
 
 
 
-              $(".container-navs").animate({right:'280px' },1000);
+              $(".container-navs").animate({right:'180px' },1000);
 
-              $(".main").animate({right:'100px' },1000);
+              $(".main").animate({right:'180px' },1000);
               setTimeout(function(){
 
-              	var i=$(".container-navs .dropdown").css("opacity");
+              
                 
 
                 	$(".container-navs .dropdown").css("opacity","1");
@@ -294,14 +334,14 @@
 		<div class=content>
 			<div class=top>
 				<div class=top-container>
-					<div class=top_icon></div>
-					<div class=top_navs>
-						<a href="#"><span data-hover="HOME">HOME</span></a>
-						<a href="#"><span data-hover="INTRO">INTRO</span></a>
-						<a href="#"><span data-hover="PYTHON">PYTHON</span></a>
-						<a href="#"><span data-hover="JAVASCRIPT">JAVASCRIPT</span></a>
-						<a href="#"><span data-hover="AIRWATCH">AIRWATCH</span></a>
-						<a href="#"><span data-hover="EMM">EMM</span></a>
+					<div class=top-icon></div>
+					<div class=top-navs>
+						<a href="#" data-hover="HOME">HOME</a>
+						<a href="#" data-hover="INTRO">INTRO</a>
+						<a href="#" data-hover="PYTHON">PYTHON</a>
+						<a href="#" data-hover="JAVASCRIPT">JAVASCRIPT</a>
+						<a href="#" data-hover="AIRWATCH">AIRWATCH</a>
+						<a href="#" data-hover="EMM">EMM</a>
 					</div>
 				</div>
 			</div>
@@ -318,7 +358,14 @@
 						<li><a href="#">Private jet</a></li>
 					</ul>
 				</div>
-				
+				<div id="kk1" class=container-navs>
+					<span id="jj">Transport</span>
+					<ul class="dropdown">
+						<li><a href="#">Classic mail</a></li>
+						<li><a href="#">UPS Delivery</a></li>
+						<li><a href="#">Private jet</a></li>
+					</ul>
+				</div>				
 				<div class=clear></div>
 			</div>
 		</div>
