@@ -3,7 +3,7 @@
 	z-index:1000;
 	-webkit-animation:content 3s linear 5s backwards;
 }
-.title{
+.start{
 	z-index:0;
 	position:fixed;
 	width:100%;height:100%;
@@ -17,10 +17,10 @@
 	width:75px;height:75px;
 	top:50%;left:50%;
 	margin:-37px;
-	background-image:url("logo.png");
+	background-image:url("../logo.png");
 	-webkit-animation:image 3s linear forwards;
 }
-.title h2{
+.start h2{
 	font-weight:blod;
 	font-size:60px;
 	top:60%;
